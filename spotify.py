@@ -9,7 +9,7 @@ def authorize_spotify():
                                                 scope = SCOPE))
     return sp
 
-def create_playlist(name = 'Youtube Liked', sp = None):
+def create_playlist(name, sp = None):
     userid = sp.current_user()['id']
     response = sp.user_playlist_create(user = userid, name = name)
     return response['id']

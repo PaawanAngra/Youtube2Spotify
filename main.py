@@ -14,7 +14,8 @@ for song in songs_on_youtube:
     print(f'Retrieving ID {counter} for {song}')
     song_ids.append(spotify.track_name_to_id(song, sp))
     counter += 1
-playlist_id = spotify.create_playlist(sp = sp)
+name = input("Enter the name of the playlist you want to create in spotify - ")
+playlist_id = spotify.create_playlist(name, sp = sp)
 n = len(song_ids)
 rem = n % 100
 hundreds = int(n / 100)
