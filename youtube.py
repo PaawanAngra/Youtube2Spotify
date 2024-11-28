@@ -7,7 +7,7 @@ SCOPES = ["https://www.googleapis.com/auth/youtube.readonly"]
 
 def retrieve_youtube_playlist():
         flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
-                'client_secret.json', SCOPES)
+                'google_client_secret.json', SCOPES)
         credentials = flow.run_local_server(port=0)
         youtube = googleapiclient.discovery.build("youtube", "v3", credentials=credentials)
         request = youtube.videos().list(part="snippet", myRating="like")

@@ -1,1 +1,4 @@
 .venv
+.cache
+google_client_secret.json
+spotify_client_secret.json

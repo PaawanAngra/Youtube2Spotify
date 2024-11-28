@@ -1,10 +1,19 @@
 import youtube
 import spotify
 import time
+import json
 
 songs_on_youtube = youtube.retrieve_youtube_playlist()
 
-sp = spotify.authorize_spotify()
+with open("spotify_client_secret.json", "r") as file:
+    spotify_secrets = json.load(file)
+    spotify_client_id = spotify_secrets['client_id']
+    spotify_client_secret = spotify_secrets['client_secret']
+    file.close()
+print(spotify_client_secret)
+print(spotify_client_id)
+sp = spotify.authorize_spotify(spotify_client_id, spotify_client_secret)
+
 song_ids = []
 counter = 1
 for song in songs_on_youtube:

@@ -1,10 +1,11 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 
-def authorize_spotify():
+
+def authorize_spotify(client_id, client_secret):
     SCOPE = "playlist-modify-public playlist-modify-private"
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id="ab32d1d292a14c18922d55507b8bf739",
-                                                client_secret="9e1098c1cc6d4a799ee067ae7dca221f",
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id = client_id,
+                                                client_secret = client_secret,
                                                 redirect_uri="http://localhost:8080",
                                                 scope = SCOPE))
     return sp
