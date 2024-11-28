@@ -6,6 +6,7 @@ import googleapiclient.errors
 SCOPES = ["https://www.googleapis.com/auth/youtube.readonly"]
 
 def retrieve_youtube_playlist():
+        # Authorizes the user using OAuth 2.0 and retrieves the titles of all liked videos
         flow = google_auth_oauthlib.flow.InstalledAppFlow.from_client_secrets_file(
                 'google_client_secret.json', SCOPES)
         credentials = flow.run_local_server(port=0)
